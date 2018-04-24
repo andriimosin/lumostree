@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class='title'><%= @directory_tree.name %></h1>
+
+<% @directory_tree.nodes.roots.each do |root| %>
+  <%= render 'node_data', node: root, directory_tree_id: @directory_tree.id %>
+<% end %>
+
+<%= render 'create_new_node', directory_tree_id: @directory_tree.id, parent_id: nil %>
+
+</br>
+
+<%= link_to 'Edit', edit_directory_tree_path(@directory_tree), :class => 'btn btn-primary' %>
+<%= link_to 'Back', directory_trees_path, :class => 'btn btn-primary' %>

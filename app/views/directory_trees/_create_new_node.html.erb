@@ -1,0 +1,8 @@
+<div class='new-node-form'>
+  <%= form_with url: directory_tree_nodes_path(directory_tree_id), local: true do |f| %>
+    |-- [ <%= f.text_field 'node[name]' %> ]
+    <%= f.hidden_field 'node[parent_id]', value: parent_id %>
+
+    <%= f.submit "ADD NEW NODE", :class => 'btn btn-light' %>
+  <% end %>
+</div>

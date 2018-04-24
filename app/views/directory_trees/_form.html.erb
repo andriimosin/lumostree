@@ -1,0 +1,22 @@
+<%= form_with(model: directory_tree, local: true) do |form| %>
+  <% if directory_tree.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(directory_tree.errors.count, "error") %> prohibited this directory_tree from being saved:</h2>
+
+      <ul>
+      <% directory_tree.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit nil, :class => 'btn btn-primary' %>
+  </div>
+<% end %>

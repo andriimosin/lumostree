@@ -1,0 +1,17 @@
+<p>|-- <%= node.name %></p>
+
+<% unless node.children.present? %>
+  <div class='add-new-node-block'>
+    <%= render 'create_new_node', directory_tree_id: directory_tree_id, parent_id: node.id %>
+  </div>
+<% end %>
+
+<% node.children.each_with_index do |child, i| %>
+  <div class='children-nodes'>
+    <%= render 'node_data', node: child, directory_tree_id: directory_tree_id %>
+
+    <% if i == node.children.count %>
+      <%= render 'create_new_node', directory_tree_id: directory_tree_id, parent_id: node.id %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class='title'>Directory Trees</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col" colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @directory_trees.each do |directory_tree| %>
+      <tr>
+        <td><%= link_to directory_tree.name, directory_tree %></td>
+        <td><%= link_to 'Edit Name', edit_directory_tree_path(directory_tree),
+                :class => 'btn btn-success' %></td>
+        <td><%= link_to 'Destroy', directory_tree,
+                method: :delete,
+                data: { confirm: 'Are you sure?' },
+                :class => 'btn btn-danger' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Directory Tree', new_directory_tree_path, :class => 'btn btn-primary' %>
