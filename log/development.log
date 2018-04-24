@@ -18554,3 +18554,242 @@ Processing by DirectoryTreesController#index as HTML
 Completed 200 OK in 29ms (Views: 27.0ms | ActiveRecord: 0.1ms)
 
 
+  [1m[35m (57.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (30.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (23.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7192073281558914945)[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (10.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateDirectoryTrees (20180423185158)
+  [1m[35m (6.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE TABLE "directory_trees" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180423185158_create_directory_trees.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (3.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180423185158"]]
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+Migrating to CreateNodes (20180423190424)
+  [1m[35m (6.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "nodes" ("id" bigserial primary key, "name" character varying, "parent_id" integer DEFAULT NULL, "directory_tree_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20180423190424_create_nodes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180423190424"]]
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (7.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-24 01:39:32.677899"], ["updated_at", "2018-04-24 01:39:32.677899"]]
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7192073281558914945)[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+  [1m[35m (12.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/bin/rake:23
+Started GET "/directory_trees" for ::1 at 2018-04-23 18:39:36 -0700
+Processing by DirectoryTreesController#index as HTML
+  Rendering directory_trees/index.html.erb within layouts/application
+  [1m[36mDirectoryTree Load (0.2ms)[0m  [1m[34mSELECT "directory_trees".* FROM "directory_trees"[0m
+  ↳ app/views/directory_trees/index.html.erb:14
+  Rendered directory_trees/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 38ms (Views: 31.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/directory_trees" for ::1 at 2018-04-23 18:39:45 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/mosin/.rvm/gems/ruby-2.5.1/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by DirectoryTreesController#index as HTML
+  Rendering directory_trees/index.html.erb within layouts/application
+  [1m[36mDirectoryTree Load (0.7ms)[0m  [1m[34mSELECT "directory_trees".* FROM "directory_trees"[0m
+  ↳ app/views/directory_trees/index.html.erb:14
+  Rendered directory_trees/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 296ms (Views: 277.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/directory_trees/new" for ::1 at 2018-04-23 18:39:47 -0700
+Processing by DirectoryTreesController#new as HTML
+  Rendering directory_trees/new.html.erb within layouts/application
+  Rendered directory_trees/_form.html.erb (79.2ms)
+  Rendered directory_trees/new.html.erb within layouts/application (81.9ms)
+Completed 200 OK in 120ms (Views: 102.5ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/directory_trees" for ::1 at 2018-04-23 18:39:53 -0700
+Processing by DirectoryTreesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cwhx4e5xwf0cJhwWKjY+pBV24+rvDZ6gw1JQZIPprELgKWjwLBDk/wQWYhLVVFlhuog/xGkdWDe8F6wg2frAVg==", "directory_tree"=>{"name"=>"New test dir"}, "commit"=>"Create Directory tree"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/directory_trees_controller.rb:19
+  [1m[36mDirectoryTree Create (1.6ms)[0m  [1m[32mINSERT INTO "directory_trees" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "New test dir"], ["created_at", "2018-04-24 01:39:53.865456"], ["updated_at", "2018-04-24 01:39:53.865456"]]
+  ↳ app/controllers/directory_trees_controller.rb:19
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/directory_trees_controller.rb:19
+Redirected to http://localhost:3001/directory_trees
+Completed 302 Found in 13ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/directory_trees" for ::1 at 2018-04-23 18:39:53 -0700
+Processing by DirectoryTreesController#index as HTML
+  Rendering directory_trees/index.html.erb within layouts/application
+  [1m[36mDirectoryTree Load (0.8ms)[0m  [1m[34mSELECT "directory_trees".* FROM "directory_trees"[0m
+  ↳ app/views/directory_trees/index.html.erb:14
+  Rendered directory_trees/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 25ms (Views: 21.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/directory_trees/1/edit" for ::1 at 2018-04-23 18:39:55 -0700
+Processing by DirectoryTreesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDirectoryTree Load (0.8ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directory_trees_controller.rb:45
+  Rendering directory_trees/edit.html.erb within layouts/application
+  Rendered directory_trees/_form.html.erb (2.9ms)
+  Rendered directory_trees/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 40ms (Views: 28.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/directory_trees" for ::1 at 2018-04-23 18:39:57 -0700
+Processing by DirectoryTreesController#index as HTML
+  Rendering directory_trees/index.html.erb within layouts/application
+  [1m[36mDirectoryTree Load (0.4ms)[0m  [1m[34mSELECT "directory_trees".* FROM "directory_trees"[0m
+  ↳ app/views/directory_trees/index.html.erb:14
+  Rendered directory_trees/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/directory_trees/1" for ::1 at 2018-04-23 18:39:57 -0700
+Processing by DirectoryTreesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDirectoryTree Load (0.5ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directory_trees_controller.rb:45
+  Rendering directory_trees/show.html.erb within layouts/application
+  [1m[36mNode Load (6.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."directory_tree_id" = $1 AND "nodes"."parent_id" IS NULL[0m  [["directory_tree_id", 1]]
+  ↳ app/views/directory_trees/show.html.erb:5
+  Rendered directory_trees/_create_new_node.html.erb (2.4ms)
+  Rendered directory_trees/show.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 63ms (Views: 44.7ms | ActiveRecord: 15.2ms)
+
+
+Started POST "/directory_trees/1/nodes" for ::1 at 2018-04-23 18:40:02 -0700
+Processing by NodesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5CiuQUmkfdnrdSLA9gChBObzAZsSIXhlyN0iJZ3PYZccNhGHCdP9QWz+XGbaghGCmzFQMkKbjPe+C88Tu83qw==", "node"=>{"name"=>"Root node", "parent_id"=>""}, "commit"=>"ADD NEW NODE", "directory_tree_id"=>"1"}
+  [1m[36mDirectoryTree Load (0.7ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:10
+  [1m[36mNode Create (1.0ms)[0m  [1m[32mINSERT INTO "nodes" ("name", "directory_tree_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Root node"], ["directory_tree_id", 1], ["created_at", "2018-04-24 01:40:02.665465"], ["updated_at", "2018-04-24 01:40:02.665465"]]
+  ↳ app/controllers/nodes_controller.rb:10
+  [1m[35m (6.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:10
+Redirected to http://localhost:3001/directory_trees/1
+Completed 302 Found in 23ms (ActiveRecord: 12.1ms)
+
+
+Started GET "/directory_trees/1" for ::1 at 2018-04-23 18:40:02 -0700
+Processing by DirectoryTreesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDirectoryTree Load (0.4ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directory_trees_controller.rb:45
+  Rendering directory_trees/show.html.erb within layouts/application
+  [1m[36mNode Load (0.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."directory_tree_id" = $1 AND "nodes"."parent_id" IS NULL[0m  [["directory_tree_id", 1]]
+  ↳ app/views/directory_trees/show.html.erb:5
+  [1m[36mNode Load (0.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (1.5ms)
+  Rendered directory_trees/_node_data.html.erb (4.9ms)
+  Rendered directory_trees/_create_new_node.html.erb (0.7ms)
+  Rendered directory_trees/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/directory_trees/1/nodes" for ::1 at 2018-04-23 18:40:07 -0700
+Processing by NodesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3vTL8Vav1BkPXRiqyEm/ycDr5CgZl7xMffT791NOF4yN+HPl7gBqxBIRRzYS0UwxTi3I3I9ZTrl3FIzSOIB4fw==", "node"=>{"name"=>"2 root node", "parent_id"=>""}, "commit"=>"ADD NEW NODE", "directory_tree_id"=>"1"}
+  [1m[36mDirectoryTree Load (0.4ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:10
+  [1m[36mNode Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("name", "directory_tree_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "2 root node"], ["directory_tree_id", 1], ["created_at", "2018-04-24 01:40:07.879462"], ["updated_at", "2018-04-24 01:40:07.879462"]]
+  ↳ app/controllers/nodes_controller.rb:10
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:10
+Redirected to http://localhost:3001/directory_trees/1
+Completed 302 Found in 12ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/directory_trees/1" for ::1 at 2018-04-23 18:40:07 -0700
+Processing by DirectoryTreesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDirectoryTree Load (0.3ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directory_trees_controller.rb:45
+  Rendering directory_trees/show.html.erb within layouts/application
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."directory_tree_id" = $1 AND "nodes"."parent_id" IS NULL[0m  [["directory_tree_id", 1]]
+  ↳ app/views/directory_trees/show.html.erb:5
+  [1m[36mNode Load (0.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (1.2ms)
+  Rendered directory_trees/_node_data.html.erb (4.5ms)
+  [1m[36mNode Load (0.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 2]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (0.7ms)
+  Rendered directory_trees/_node_data.html.erb (3.2ms)
+  Rendered directory_trees/_create_new_node.html.erb (0.7ms)
+  Rendered directory_trees/show.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 37ms (Views: 32.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/directory_trees/1/nodes" for ::1 at 2018-04-23 18:40:10 -0700
+Processing by NodesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NkRv9SU2z+As8MBpFEU5o+CD+VbE2s68Cp/fsty1eKBlSNfhnZlxPTG8n/XO3cpbbkXVolIUPEkAf6iXt3sXUw==", "node"=>{"name"=>"2", "parent_id"=>"1"}, "commit"=>"ADD NEW NODE", "directory_tree_id"=>"1"}
+  [1m[36mDirectoryTree Load (0.3ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/nodes_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/nodes_controller.rb:10
+  [1m[36mNode Create (0.5ms)[0m  [1m[32mINSERT INTO "nodes" ("name", "parent_id", "directory_tree_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "2"], ["parent_id", 1], ["directory_tree_id", 1], ["created_at", "2018-04-24 01:40:10.627263"], ["updated_at", "2018-04-24 01:40:10.627263"]]
+  ↳ app/controllers/nodes_controller.rb:10
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/nodes_controller.rb:10
+Redirected to http://localhost:3001/directory_trees/1
+Completed 302 Found in 11ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/directory_trees/1" for ::1 at 2018-04-23 18:40:10 -0700
+Processing by DirectoryTreesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDirectoryTree Load (0.4ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directory_trees_controller.rb:45
+  Rendering directory_trees/show.html.erb within layouts/application
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."directory_tree_id" = $1 AND "nodes"."parent_id" IS NULL[0m  [["directory_tree_id", 1]]
+  ↳ app/views/directory_trees/show.html.erb:5
+  [1m[36mNode Load (0.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  [1m[36mNode Load (0.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 3]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (1.1ms)
+  Rendered directory_trees/_node_data.html.erb (3.2ms)
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:13
+  Rendered directory_trees/_node_data.html.erb (10.0ms)
+  [1m[36mNode Load (0.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 2]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (0.9ms)
+  Rendered directory_trees/_node_data.html.erb (3.3ms)
+  Rendered directory_trees/_create_new_node.html.erb (1.4ms)
+  Rendered directory_trees/show.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 45ms (Views: 37.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/directory_trees" for ::1 at 2018-04-23 18:40:12 -0700
+Processing by DirectoryTreesController#index as HTML
+  Rendering directory_trees/index.html.erb within layouts/application
+  [1m[36mDirectoryTree Load (0.4ms)[0m  [1m[34mSELECT "directory_trees".* FROM "directory_trees"[0m
+  ↳ app/views/directory_trees/index.html.erb:14
+  Rendered directory_trees/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.4ms)
+
+
