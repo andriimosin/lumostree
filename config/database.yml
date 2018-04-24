@@ -28,7 +28,6 @@ test:
   password:
   host: localhost
 
-
 production:
   <<: *default
   database: lumostree_prod

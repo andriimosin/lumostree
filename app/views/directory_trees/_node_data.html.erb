@@ -10,7 +10,7 @@
   <div class='children-nodes'>
     <%= render 'node_data', node: child, directory_tree_id: directory_tree_id %>
 
-    <% if i == node.children.count %>
+    <% if i+1 == node.children.count %>
       <%= render 'create_new_node', directory_tree_id: directory_tree_id, parent_id: node.id %>
     <% end %>
   </div>

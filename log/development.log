@@ -18793,3 +18793,108 @@ Processing by DirectoryTreesController#index as HTML
 Completed 200 OK in 35ms (Views: 32.8ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/directory_trees/1" for ::1 at 2018-04-23 18:50:35 -0700
+Processing by DirectoryTreesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDirectoryTree Load (1.7ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directory_trees_controller.rb:45
+  Rendering directory_trees/show.html.erb within layouts/application
+  [1m[36mNode Load (1.0ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."directory_tree_id" = $1 AND "nodes"."parent_id" IS NULL[0m  [["directory_tree_id", 1]]
+  ↳ app/views/directory_trees/show.html.erb:5
+  [1m[36mNode Load (0.2ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  [1m[36mNode Load (0.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 3]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (1.4ms)
+  Rendered directory_trees/_node_data.html.erb (3.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:13
+  Rendered directory_trees/_node_data.html.erb (8.3ms)
+  [1m[36mNode Load (0.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 2]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (1.0ms)
+  Rendered directory_trees/_node_data.html.erb (3.2ms)
+  Rendered directory_trees/_create_new_node.html.erb (0.8ms)
+  Rendered directory_trees/show.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 48ms (Views: 40.2ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/directory_trees/1" for ::1 at 2018-04-23 18:50:36 -0700
+Processing by DirectoryTreesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDirectoryTree Load (0.6ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directory_trees_controller.rb:45
+  Rendering directory_trees/show.html.erb within layouts/application
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."directory_tree_id" = $1 AND "nodes"."parent_id" IS NULL[0m  [["directory_tree_id", 1]]
+  ↳ app/views/directory_trees/show.html.erb:5
+  [1m[36mNode Load (0.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  [1m[36mNode Load (0.4ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 3]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (1.4ms)
+  Rendered directory_trees/_node_data.html.erb (3.8ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:13
+  Rendered directory_trees/_node_data.html.erb (7.8ms)
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 2]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (0.8ms)
+  Rendered directory_trees/_node_data.html.erb (3.5ms)
+  Rendered directory_trees/_create_new_node.html.erb (0.5ms)
+  Rendered directory_trees/show.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 41ms (Views: 35.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/directory_trees/1" for ::1 at 2018-04-23 18:50:44 -0700
+Processing by DirectoryTreesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDirectoryTree Load (1.0ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directory_trees_controller.rb:45
+  Rendering directory_trees/show.html.erb within layouts/application
+  [1m[36mNode Load (0.8ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."directory_tree_id" = $1 AND "nodes"."parent_id" IS NULL[0m  [["directory_tree_id", 1]]
+  ↳ app/views/directory_trees/show.html.erb:5
+  [1m[36mNode Load (0.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 3]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (1.8ms)
+  Rendered directory_trees/_node_data.html.erb (5.4ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:13
+  Rendered directory_trees/_node_data.html.erb (10.0ms)
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 2]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (0.8ms)
+  Rendered directory_trees/_node_data.html.erb (3.1ms)
+  Rendered directory_trees/_create_new_node.html.erb (0.5ms)
+  Rendered directory_trees/show.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 42ms (Views: 34.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/directory_trees/1" for ::1 at 2018-04-23 18:51:13 -0700
+Processing by DirectoryTreesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDirectoryTree Load (1.9ms)[0m  [1m[34mSELECT  "directory_trees".* FROM "directory_trees" WHERE "directory_trees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/directory_trees_controller.rb:45
+  Rendering directory_trees/show.html.erb within layouts/application
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."directory_tree_id" = $1 AND "nodes"."parent_id" IS NULL[0m  [["directory_tree_id", 1]]
+  ↳ app/views/directory_trees/show.html.erb:5
+  [1m[36mNode Load (1.7ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  [1m[36mNode Load (0.3ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 3]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (1.4ms)
+  Rendered directory_trees/_node_data.html.erb (3.8ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 1]]
+  ↳ app/views/directory_trees/_node_data.html.erb:13
+  Rendered directory_trees/_create_new_node.html.erb (0.8ms)
+  Rendered directory_trees/_node_data.html.erb (11.4ms)
+  [1m[36mNode Load (0.5ms)[0m  [1m[34mSELECT "nodes".* FROM "nodes" WHERE "nodes"."parent_id" = $1[0m  [["parent_id", 2]]
+  ↳ app/views/directory_trees/_node_data.html.erb:3
+  Rendered directory_trees/_create_new_node.html.erb (0.9ms)
+  Rendered directory_trees/_node_data.html.erb (3.4ms)
+  Rendered directory_trees/_create_new_node.html.erb (0.7ms)
+  Rendered directory_trees/show.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 49ms (Views: 40.0ms | ActiveRecord: 5.3ms)
+
+
